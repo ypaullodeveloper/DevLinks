@@ -1,16 +1,17 @@
 function toggleMode() {
-  const html = document.documentElement
-  html.classList.toggle("light")
+  // Alterna a classe 'light' no HTML
+  html.classList.toggle("light");
 
+  // Atualiza a imagem com base no tema ativo
+  updateImage();
+}
   // pegar a tag img
-  const img = document.querySelector("#profile img")
-
-  // substituir a imagem
+function updateImage() {
   if (html.classList.contains("light")) {
-    // se tiver light mode, adicionar a imagem light
-    img.setAttribute("src", "assets/imagens/avatar.png")
+    // Tema claro: exibir imagem light
+    img.setAttribute("src", "assets/imagens/avatar-light.png");
   } else {
-    // set tiver sem light mode, manter a imagem normal
-    img.setAttribute("src", "assets/imagens/avatar.png")
+    // Tema escuro: exibir imagem padrão
+    img.setAttribute("src", "assets/imagens/avatar.png");
   }
 }
